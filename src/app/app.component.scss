@@ -1,0 +1,16 @@
+.grid {
+  padding: 1rem;
+}
+.grid-item {
+  padding: 1.5rem;
+  border-radius: .3rem;
+  background-color: #D0FEE3;
+}
+
+/*****/
+.grid {
+  display: grid;
+  gap: 1rem;
+  min-height: 100vh;
+  grid-template-rows: 4rem 1fr;
+}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'mgmovapp-root',
   templateUrl: './app.component.html',
