@@ -12,5 +12,5 @@
   display: grid;
   gap: 1rem;
   min-height: 100vh;
-  grid-template-rows: 4rem 1fr;
+  grid-template-rows: auto 1fr;
 }

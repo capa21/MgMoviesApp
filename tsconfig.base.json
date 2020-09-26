@@ -18,6 +18,7 @@
     ],
     "paths": {
       "@material/*": ["src/app/material/*"],
+      "@core/*": ["src/app/core/*"],
     }
   }
 }
