@@ -1,6 +1,6 @@
 # MoviesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+Film management application made in Angular version 10.0.0., with global state management with Redux, application of styles with Sass, Layout build with CSS Grid Layout; Bulma as CSS framework for component styles. 
 
 ## 1. Dependences install
 
