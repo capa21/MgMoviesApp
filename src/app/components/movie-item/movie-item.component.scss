@@ -1,0 +1,28 @@
+@import '../../sass/var';
+.grid {
+  border: $border-containers;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.disappear {
+  display: none;
+}
+
+.titulo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.release {
+  font-weight: bold;
+}
+small {
+  font-weight: normal;
+}
+.active {
+  cursor: pointer;
+  box-shadow: 0 0 20px #4f9;
+}

@@ -1,9 +1,14 @@
 <div class="grid">
-  <header class="ite-grid header">
-    <p>MovieTitle</p>
+  <header class = "item-grid header">
+    <p class="header__title"> {{movie.title}} </p>
   </header>
+  <aside class="aside">
+    <p class="aside__relaese"> RELAESE DATE: {{movie.release}} </p>
+  </aside>
   <main class="item-grid main">
-    <img src="" alt="">
-    <p>Movie Description:</p>
+    <img [src]="movie.image" alt="movie imagen">
   </main>
+  <footer item-grid footer>
+    <p class="footer__description">{{movie.description}}</p>
+  </footer>
 </div>

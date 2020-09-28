@@ -1,2 +1,116 @@
-<p>add-movie works!</p>
-<button (click)="saveMovie()">Save Movie</button>
+<section class="hero is-primary is-bold">
+  <div class="container">
+    <h1 class="title">
+      Add Movie
+    </h1>
+  </div>
+</section>
+<div class="container">
+<section class="section">
+  <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control has-icons-left has-icons-right">
+        <input
+          class="input"
+          type="text"
+          formControlName="title"
+          [class.is-danger]="titleFieldIsInvalid"
+          [class.is-success]="titleFieldIsValid" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span *ngIf="titleFieldIsInvalid; else elseTitleField" class="icon is-small is-right">
+          <i class="fas fa-times"></i>
+        </span>
+        <ng-template #elseTitleField>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </ng-template>
+      </div>
+      <div *ngIf="titleFieldIsInvalid">
+        <p class="help is-danger" *ngIf="titleField.hasError('required')">
+          It is a required field
+        </p>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Realease Date</label>
+      <div class="control has-icons-left has-icons-right">
+        <input
+          class="input"
+          type="date"
+          formControlName="release"
+          [class.is-danger]="dateFieldIsInvalid"
+          [class.is-success]="dateFieldIsValid" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-calendar-alt"></i>
+        </span>
+        <span *ngIf="dateFieldIsInvalid; else elseDateField" class="icon is-small is-right">
+          <i class="fas fa-times"></i>
+        </span>
+        <ng-template #elseDateField>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </ng-template>
+      </div>
+      <div *ngIf="dateFieldIsInvalid">
+        <p class="help is-danger" *ngIf="dateField.hasError('required')">
+          It is a required field
+        </p>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Description</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          cols="30"
+          rows="10"
+          formControlName="description"
+        ></textarea>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Image</label>
+      <div class="field">
+        <div class="file has-name">
+          <label class="file-label">
+            <input
+              (change) ="previewImage($event.target.files)"
+              class="file-input"
+              type="file"
+              accept=".jpeg, .jpg, .png"
+              name="resume"
+              formControlName="image"
+              >
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Select a file
+              </span>
+            </span>
+          </label>
+        </div>
+        <div *ngIf="imageFieldIsInvalid">
+          <p class="help is-danger" *ngIf="imageField.hasError('required')">
+            It is a required field
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <img id="imgMovie" src="" alt="">
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-primary" type="submit">Save Movie</button>
+      </div>
+    </div>
+  </form>
+</section>
+</div>

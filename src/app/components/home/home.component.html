@@ -1,8 +1,15 @@
-<div class="grid">
-  <aside class="grid-item aside">
-    <mgmovapp-movies-list></mgmovapp-movies-list>
-  </aside>
-  <main class="grid-item main">
-    <mgmovapp-home-main></mgmovapp-home-main>
-  </main>
-</div>
+  <div *ngIf="!thereAreMovies" class="notice-notmovie">
+    <p class="notice-notmovie__title grid-item">At this time there are no movies to view.</p>
+    <p class="notice-notmovie__subtitle grid-item">If you want you can add</p>
+    <div>
+      <button class="notice-notmovie__action grid-item" (click)="goAddMovie()" >Add Movie</button>
+    </div>
+  </div>
+  <div *ngIf="thereAreMovies" class="theris-movie">
+    <aside class="grid-item aside">
+      <mgmovapp-movies-list></mgmovapp-movies-list>
+    </aside>
+    <main class="grid-item main">
+      <mgmovapp-home-main></mgmovapp-home-main>
+    </main>
+  </div>

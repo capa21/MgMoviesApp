@@ -1,0 +1,25 @@
+@import '../../sass/var';
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: $border-containers;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  &__action {
+    background-color: $color-btn-add-movie;
+    width: 20%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-style: none;
+    &:hover {
+      background: darken($color-btn-add-movie, 15%);
+      cursor: pointer;
+    }
+  }
+}
+

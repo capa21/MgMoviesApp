@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mgmovapp-home-main',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeMainComponent implements OnInit {
 
-  constructor() { }
+  constructor( private route: Router) { }
 
   ngOnInit(): void {
+  }
+  addMovie(): void {
+    this.route.navigateByUrl('/add-movie');
   }
 
 }

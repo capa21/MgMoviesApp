@@ -1,8 +1,8 @@
 import { Movie } from './movie.model';
 
-import { AllActions, MOVIE_ADD, MOVIE_REMOVE } from './movie.actions';
+import { AllActions, MOVIE_ADD, MOVIE_REMOVE, MOVIE_SELECTED } from './movie.actions';
 
-export function MoviesReducer(oldState: Movie[] = [], action: AllActions): Movie[] {
+export function moviesReducer(oldState: Movie[] = [], action: AllActions): Movie[] {
   switch (action.type) {
     case MOVIE_ADD: {
       return [
@@ -11,8 +11,13 @@ export function MoviesReducer(oldState: Movie[] = [], action: AllActions): Movie
       ];
     }
     case MOVIE_REMOVE: {
-      return oldState.filter((todo) => {
-        return todo.id !== action.id;
+      return oldState.filter((movie) => {
+        return movie.id !== action.id;
+      });
+    }
+    case MOVIE_SELECTED: {
+      return oldState.filter((movie) => {
+        return movie.id === action.id;
       });
     }
     default: {

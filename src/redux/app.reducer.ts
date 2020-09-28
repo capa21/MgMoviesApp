@@ -1,8 +1,10 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { AppState } from './app.state';
 
-import { MoviesReducer } from './movie/movie.reducer';
+import { moviesReducer } from './movie/movie.reducer';
+import { filterReducer } from './filter/filter.reducer';
 
 export const AppReducer: ActionReducerMap<AppState>  = {
-  movies: MoviesReducer
+  movies: moviesReducer,
+  filter: filterReducer
 };

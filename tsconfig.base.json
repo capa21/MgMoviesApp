@@ -17,8 +17,8 @@
       "dom"
     ],
     "paths": {
-      "@material/*": ["src/app/material/*"],
       "@core/*": ["src/app/core/*"],
+      "@redux/*": ["src/redux/*"],
     }
   }
 }

@@ -1,1 +1,14 @@
-<p>movie-item works!</p>
+<article class="grid" (click)="selectedMovie()">
+  <h3 class="titulo grid-item">{{movie.title}}</h3>
+  <div>
+    <a class="button icon-delete" (click)="deleteMovie()">
+      <span class="icon is-small">
+        <i class="far fa-trash-alt"></i>
+      </span>
+    </a>
+  </div>
+  <p class="release grid-item"> Release Date:
+    <small>{{movie.release | date}}</small>
+  </p>
+</article>
+
